@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 
 const BoxGen = () => {
 
-    const [newColor, setNewColor] = useState({
+    const [newBox, setNewBox] = useState({
         newColor: "",
         hW: ""
     })
@@ -12,21 +12,21 @@ const BoxGen = () => {
 
     const dims = (e) => {
         console.log(e.target.value)
-        setNewColor({...newColor, [e.target.name]: e.target.value})
+        setNewBox({...newBox, [e.target.name]: e.target.value})
     }
 
     const newSelectedColor = (e) => {
-        // setNewColor({...newColor.heightWidth, [e.target.name]: e.target.value})
-        setNewColor({...newColor, [e.target.name]: e.target.value})
-        console.log(newColor.hW)
+        // setNewBox({...newColor.heightWidth, [e.target.name]: e.target.value})
+        setNewBox({...newBox, [e.target.name]: e.target.value})
+        console.log(newBox.hW)
     }
 
     const addColorToList = (e) => {
         e.preventDefault();
         console.log(colorList)
-        setColorList([...colorList, newColor])
-        setNewColor({newColor: "", hW: ""})
-        // setNewColor({hW: ""})
+        setColorList([...colorList, newBox])
+        setNewBox({newColor: "", hW: ""})
+        // setNewBox({hW: ""})
     }
     
     return (
@@ -35,22 +35,22 @@ const BoxGen = () => {
                 <h1>Pick a color!</h1>
                 <form action="" onSubmit={(addColorToList)}>
                     <label htmlFor="">Type a color: </label>
-                    <input type="text" name="newColor" value={newColor.newColor} onChange={newSelectedColor}/>
-                    <input type="number" name="hW" value={newColor.hW} onChange={dims}/>
+                    <input type="text" name="newColor" value={newBox.newColor} onChange={newSelectedColor}/>
+                    <input type="number" name="hW" value={newBox.hW} onChange={dims}/>
                     <button>Submit</button>
                 </form>
             </div>
             <div>
                 {
-                    colorList.map((newColor, i) =>
+                    colorList.map((newBox, i) =>
                     <div key={i} style={{
                         display: "inline-block",
-                        width: `${newColor.hW}px`,
-                        height: `${newColor.hW}px`,
+                        width: `${newBox.hW}px`,
+                        height: `${newBox.hW}px`,
                         margin: "10px",
-                        backgroundColor: newColor.newColor
+                        backgroundColor: newBox.newColor
                     }}>
-                        <p>{newColor.newColor}</p>
+                        <p>{newBox.newColor}</p>
                     </div>
                     )
                 }
