@@ -9,8 +9,7 @@ import SenseiDisplay from './components/SenseiDisplay';
 function App() {
   
   const [newBox, setNewBox] = useState({
-    newColor: "",
-    hW: ""
+    newColor: ""
 })
 
 const [newBoxSize, setNewBoxSize] = useState({
