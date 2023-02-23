@@ -13,7 +13,6 @@ const addColorToList = (e) => {
 }
   return (
     <div>
-        <h1>Pick a color!</h1>
         <form action="" onSubmit={(addColorToList)}>
                 <label htmlFor="">Type a color: </label>
                 <input type="text" name="newColor" value={newBoxSize.newColor} onChange={newSelectedColor} />
